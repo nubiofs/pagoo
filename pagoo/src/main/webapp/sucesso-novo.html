@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+        <!-- HEADER -->
+		<pagoo-header user="usuario" entidade="entidade"></pagoo-header>
+
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-24">
+                            <fieldset>                     
+                                <div class="row">
+                                    <div class="col-md-24">
+                                        <h3 class="title">Cobranca Gerada com Sucesso</h3>
+                                        <div class="divider"></div>
+                                    </div>
+                                </div>                                                   
+                                <div class="row">
+                                    <div class="col-md-24">                                        
+                                        <div class="form-group">
+                                            <label>Nome:</label><br/>
+                                            {{compra.comprador.nome}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-24">
+                                        <div class="form-group" ng-show="showcpf">
+                                            <label>CPF/CNPJ:</label><br/>                                        
+                                            {{compra.comprador.cpfcnpj | brCpf}}
+                                        </div>
+                                        <div class="form-group" ng-show="showcnpj">
+                                            <label>CPF/CNPJ:</label><br/>                                        
+                                            {{compra.comprador.cpfcnpj | brCnpj}}
+                                        </div>                                        
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Placa:</label><br/>                                        
+                                            {{compra.comprador.placa}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-24">
+                                        <h3 class="title">Serviço Contratado</h3>
+                                        <div class="divider"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                               		<div class="col-md-24">
+                               			<div class="form-group">
+                               				<label>Nome</label><br/>     
+                               				{{compra.servicoContratado.nome}} 
+										</div>	                                		
+                               		</div>
+                                </div>
+                                <div class="row">
+                               		<div class="col-md-24">
+                               			<div class="form-group">
+                               				<label>Valor (Reais)</label> <br/>    
+                               				{{compra.servicoContratado.valor | currency}}
+                               			</div> 
+                               		</div>                                                           
+                                 </div>                              
+                                 <div class="row">                          
+                                    <div class="col-md-6">
+                                        <div class="form-group no-margin">
+                                            <button class="btn btn-default pull-right bt-all"  type="submit">Download Borderô / Guia</button>
+                                        </div> 
+                                    </div>                                                            
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+		<pagoo-footer></pagoo-footer>

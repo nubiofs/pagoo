@@ -1,0 +1,24 @@
+{
+  "name": "Pagoo",
+  "version": "0.0.1",
+  "description": "Pagoo Pagamentos na Nuvem",
+  "authors": [
+    "David Reis (davidfdr@gmail.com) - Infosolo"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.pagoo.net.br/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-utils": "~2.0.0",
+    "angular-mask": "~3.0.12",
+    "angular-input-masks": "~2.0.0",
+    "angular-dialog-service": "~5.2.8",
+    "angular-br-filters": "~0.4.0"
+  }
+}

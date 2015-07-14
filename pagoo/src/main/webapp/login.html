@@ -1,0 +1,97 @@
+     
+        <!-- LOGIN AREA -->
+        <section id="login">       
+            <div class="overlay">  
+           
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-14" data-sr="enter top, over 2s, move 24px">                       
+                            <div class="newuser-box">
+                                <p>Somos o seu novo Gateway de Pagamento:<button ng-hide="true" class="btn btn-default center-block pull-right">Cadastre-se</button></p> 
+                            </div>
+                        </div>                    
+                    </div>
+                </div>                
+                <div class="container">                    
+                    <div class="row">
+                        <div class="login-box">
+                            <div class="col-md-13" data-sr="enter left, over 1s, move 10px">
+                                <div class="apresentacao">
+                                    <figure>
+                                        <img src="img/logo-pagoo.png" class="center-block img-responsive" height="101" width="320" alt="Pagoo - Seu novo Gateway de Pagamento" />
+                                    </figure>
+                                    <figure class="separator">
+                                        <img src="img/separator.png" class="center-block img-responsive" height="24" width="213" alt="Separador" />
+                                    </figure>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi consequatur fugit pariatur nihil ab sunt, enim facere minus ad, sit sapiente accusamus doloremque, itaque neque. Expedita aut ut similique inventore. Expedita aut ut similique inventore.
+                                    </p>
+                                </div>
+                            </div>                        
+                            <div class="col-md-10 col-md-offset-1" data-sr="enter right, over 1s, move 10px" ng-controller="AuthCtrl">
+                                <form name="authForm" novalidade ng-submit="login(usuario)">
+                                    <fieldset>                                        
+                                        <figure>
+                                            <img src="img/tag.png" height="98" width="98" alt="Tela de Login" />
+                                        </figure>
+                                        <div class="form-group">
+                                            <label for="name_user">Usuário</label>
+                                            <input class="form-control" type="text" required name="username" placeholder="Seu Usuário" ng-model="usuario.username" />
+	                                        <div class="alert alert-danger" role="alert" ng-show="authForm.username.$invalid && authForm.username.$dirty">
+	                                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+	                                            <span class="sr-only">Error:</span>
+	                                            Por favor preencha seu nome
+	                                        </div>                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name_password">Senha</label>
+                                            <a href="#" ng-hide="true"><span class="label label-danger pull-right">recuperar senha</span></a>
+                                            <input class="form-control" type="password" required name="password" placeholder="Sua Senha" ng-model="usuario.password" />
+                                        </div>
+                                        <div class="alert alert-danger" role="alert" ng-show="authForm.password.$error.required && authForm.password.$dirty">
+                                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                            <span class="sr-only">Error:</span>
+                                            favor preencha sua senha
+                                        </div>
+                                        <div class="alert alert-danger" role="alert" ng-show="!!err">
+                                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                            <span class="sr-only">Error:</span>
+                                            Erro de autenticação
+                                        </div>
+                                        <div class="form-group no-margin">
+                                        	<button class="btn btn-default center-block bt-all" type="submit" ng-disabled="authform.$invalid">Entrar</button>
+                                        </div>                                
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- BENEFITS -->
+        <section id="benefits">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8" data-sr="enter bottom, over 2s, move 24px">
+                        <span class="icon-key"> </span>
+                        <h5>Segurança</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a feugiat sem. consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="col-md-8" data-sr="enter bottom, over 2s, move 24px">
+                        <span class="icon-rocket"> </span>
+                        <h5>Velocidade</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a feugiat sem. consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="col-md-8" data-sr="enter bottom, over 2s, move 24px">
+                        <span class="icon-cloud-check"> </span>
+                        <h5>Disponibilidade</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a feugiat sem. consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+		<pagoo-footer></pagoo-footer>

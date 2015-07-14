@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="pagoo">
+
+    <head>
+        
+        <!-- METAS FAVICON -->        
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+        <!-- METAS PADROES -->        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="description" content="Pagoo - Seu novo Gateway de Pagamento." />
+        <meta name="keywords" content="Pagamento" />
+        <meta name="author" content="Infosolo" />
+        <title>Pagoo - Seu novo Gateway de Pagamento.</title>               
+        
+        <!-- ESTILOS -->
+<!--         <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'> -->
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- HACK PARA IE8 -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+            <script src="js/respond.js"></script>
+        <![endif]-->
+
+    </head>
+ 
+    <body ng-controller="ApplicationController" ng-init="init()" >
+        <span ui-view ></span>
+        
+        <!-- Angular -->
+		<script type="text/javascript" src="./resources/imports/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-mask/dist/ngMask.js"></script>
+		<script type="text/javascript" src="./resources/imports/angular/locale-pt_br.js"></script>
+		<script type="text/javascript" src="./resources/imports/angular-ui-utils/ui-utils.min.js"></script>	
+		<script type="text/javascript" src="./resources/imports/angular/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-input-masks/angular-input-masks-standalone.js"></script>
+		<script type="text/javascript" src="./resources/imports/angular-resource/angular-resource.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+		<script type="text/javascript" src="./resources/imports/diretivas/smart-table.min.js"></script>
+		<script type="text/javascript" src="./bower_components/cpf_cnpj/build/cpf_cnpj.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-dialog-service/dist/dialogs.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-sanitize/angular-sanitize.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-br-filters/release/angular-br-filters.js"></script>
+
+		<!-- APP -->
+		<script type="text/javascript" src="./resources/app/app.js"></script>
+		
+		<!-- DIRECTIVES -->
+		<script type="text/javascript" src="./resources/app/directives/directives.js"></script>
+
+		
+		<!-- CONFIG -->
+		<script type="text/javascript" src="./resources/app/config/auth.config.js"></script>
+		<script type="text/javascript" src="./resources/app/interceptor/token.interceptor.js"></script>
+		<script type="text/javascript" src="./resources/app/interceptor/http.interceptor.js"></script>
+		<script type="text/javascript" src="./resources/app/config/resource.config.js"></script>
+		
+		<!-- CONTROLLERS -->
+		<script type="text/javascript" src="./resources/app/controller/main.controller.js"></script>
+		<script type="text/javascript" src="./resources/app/controller/auth.controller.js"></script>
+		<script type="text/javascript" src="./resources/app/controller/cobranca.controller.js"></script>
+		<script type="text/javascript" src="./resources/app/controller/consulta.cobranca.controller.js"></script>
+		
+		<!-- SERVICES -->
+		<script type="text/javascript" src="./resources/app/service/auth.service.js"></script>
+		<script type="text/javascript" src="./resources/app/service/cobranca.service.js"></script>
+		<script type="text/javascript" src="./resources/app/service/entidade.service.js"></script>
+		<script type="text/javascript" src="./resources/app/service/segmento.service.js"></script>
+		<script type="text/javascript" src="./resources/app/service/consulta.cobranca.service.js"></script>
+
+		
+		<!-- ROUTES -->
+		<script type="text/javascript" src="./resources/app/route/main.route.js"></script>
+		
+		<!-- OTHERS JS INSERTED BY DESIGNERS :) -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    </body>
+    
+    
+
+</html>

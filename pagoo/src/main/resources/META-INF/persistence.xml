@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Pagoo Persistence!
+	David Reis (davidfdr@gmail.com)
+-->
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+version="2.1">
+   <persistence-unit name="pagoo">
+      <jta-data-source>java:jboss/datasources/pagooDS</jta-data-source>
+      <class>br.com.ael.infosolo.pagoo.model.Cobranca</class>
+      <class>br.com.ael.infosolo.pagoo.model.ConvenioBancario</class>
+      <class>br.com.ael.infosolo.pagoo.model.Entidade</class>
+      <class>br.com.ael.infosolo.pagoo.model.Evento</class>
+      <class>br.com.ael.infosolo.pagoo.model.Perfil</class>
+      <class>br.com.ael.infosolo.pagoo.model.Segmento</class>
+      <class>br.com.ael.infosolo.pagoo.model.Servico</class>
+      <class>br.com.ael.infosolo.pagoo.model.TipoServico</class>
+      <class>br.com.ael.infosolo.pagoo.model.Usuario</class>
+      <class>br.com.ael.infosolo.pagoo.model.Comprador</class>
+      <properties>
+         <!-- Properties for Hibernate -->
+<!--          <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+         <property name="hibernate.show_sql" value="true" />
+         <property name="hibernate.format_sql" value="true" />
+      </properties>
+   </persistence-unit>
+</persistence>

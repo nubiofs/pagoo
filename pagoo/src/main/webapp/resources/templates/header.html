@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="img/logo-bar.png" height="30" width="120" alt="Pagoo - Seu novo Gateway de Pagamento" class="logotipo">
+            </div>
+            <div class="col-md-18">
+                <div class="user-data"> 
+                    <div class="dropdown pull-right">
+                        <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            <figure>
+                                <span class="icon-user"></span>
+                            </figure><span ng-bind="usuario.nome"></span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+<!--                             <li role="presentation"> -->
+<!--                                 <a role="menuitem" tabindex="-1" href="#">Meu Perfil</a> -->
+<!--                             </li> -->
+                            <li role="presentation">
+                                <a ng-href='#' ng-click="logout()">Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-services pull-right">
+                        <ul>
+                        	
+                            <li>
+                                <a ng-href="#home" class="btn btn-primary">Nova Cobrança</a>
+                            </li>
+                            <li>
+                                <a ng-href="#consultar"  class="btn btn-primary">Consultar Cobranças</a>
+                            </li>
+                        </ul>
+                    </div>
+					<div class="menu-services pull-left">
+                        Empresa: {{entidade.nome}}
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

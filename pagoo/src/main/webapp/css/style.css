@@ -1,0 +1,452 @@
+/* PRINCIPAL */
+body, html {
+	height: 100%;
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    font-family: 'Lato', sans-serif;
+    color: #404156;
+    font-size: 14px;
+    font-weight: 400;    
+}
+
+/* FONTS */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(../fonts/EsvMC5un3kjyUhB9ZEPPwg.woff2) format('woff2'), url(../fonts/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(../fonts/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2'), url(../fonts/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(../fonts/H2DMvhDLycM56KNuAtbJYA.woff2) format('woff2'), url(../fonts/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Lato Black'), local('Lato-Black'), url(../fonts/tI4j516nok_GrVf4dhunkg.woff2) format('woff2'), url(../fonts/BVtM30trf7q_jfqYeHfjtA.woff) format('woff');
+}
+
+/* ICOMOONS FONTES */
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?eu5qs7');
+    src:url('../fonts/icomoon.eot?#iefixeu5qs7') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?eu5qs7') format('truetype'),
+        url('../fonts/icomoon.woff?eu5qs7') format('woff'),
+        url('../fonts/icomoon.svg?eu5qs7#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ICONES */
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-download:before {
+    content: "\e960";
+}
+.icon-key:before {
+    content: "\e98d";
+    color: #d62f33;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+}
+.icon-lock:before {
+    content: "\e98f";
+}
+.icon-rocket:before {
+    content: "\e9a5";
+    color: #4da9b4;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+}
+.icon-cloud-check:before {
+    content: "\e9c4";
+    color: #836aab;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+}
+.icon-eye:before {
+    content: "\e9ce";
+}
+.icon-user:before {
+    content: "\e971";
+}
+
+/* UTEIS */
+.no-margin {
+    margin: 0;
+}
+.bt-all {
+    display: block;
+    width: 100%;
+}
+.divider {
+    border-top: 1px solid;
+    clear: both;
+    color: #dadade;
+    display: block;
+    height: 1px;
+    margin: 15px 0;
+    min-width: 100%;
+    position: relative;
+}
+.bt-in-form {
+    margin-top: 24px;
+}
+.divider::before {
+    background: #105F68 none repeat scroll 0 0;
+    content: "";
+    height: 2px;
+    position: absolute;
+    top: -1px;
+    width: 60px;
+    z-index: 55;
+}
+.btn-transparent {
+    background-color: transparent;
+    color: #ffffff;
+}
+.btn-transparent:hover, 
+.btn-transparent:focus {
+    background-color: transparent;    
+    color: #ffffff;
+}
+
+/* SOBRESCREVENDO BOOTSTRAP */
+.btn-default {
+    background-color: #105F68;
+    border-color: #105F68;
+    color: #ffffff;
+}
+.btn-default:hover, 
+.btn-default:focus {
+    background-color: #0c454c;
+    border-color: #0c454c;
+    color: #ffffff;
+}
+.btn-primary {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #105F68;    
+}
+.btn-primary:hover, 
+.btn-primary:focus {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #105F68;
+}
+
+.btn.disabled,
+.btn.disabled:hover, 
+.btn.disabled:focus, 
+.btn[disabled],
+.btn[disabled]:hover,
+.btn[disabled]:focus, 
+fieldset[disabled] {
+  background-color: #ccc;
+  border-color: #ccc;
+}
+
+.btn-default:active:hover, 
+.btn-default.active:hover, 
+.open > .dropdown-toggle.btn-default:hover, 
+.btn-default:active:focus, 
+.btn-default.active:focus, 
+.open > .dropdown-toggle.btn-default:focus, 
+.btn-default.focus:active, 
+.btn-default.active.focus, 
+.open > .dropdown-toggle.btn-default.focus {
+    background-color: #0c454c;
+    border-color: #0c454c;
+    color: #ffffff;
+}
+.pagination > .active > a, 
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > .active > span:focus {
+    background-color: #105F68;
+    border-color: #105F68;
+    color: #ffffff;
+    cursor: default;
+    z-index: 2;
+}
+a:hover, a:focus {
+    color: #105F68;
+    text-decoration: underline;
+}
+.alert {
+    padding: 6px;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 10px;
+}
+table th, 
+table td {
+    text-align: center;
+}
+
+/*************************************/
+/************ TELA DE LOGIN **********/
+/*************************************/
+
+#login {
+    width: 100%;
+    height: auto;   
+    background-color: #0A122D;
+    background: url('../img/bg-loginx.jpg') no-repeat scroll 0 0 / cover rgba(0, 0, 0, 0);    
+    z-index: 1;
+    color: #ffffff;        
+}
+
+    #login .overlay {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;        
+        background-color: rgba(0, 0, 0, 0.7);
+        background-image: url('../img/dot.png');
+        background-repeat: repeat;
+        padding: 25px 0;
+    }
+    
+        #login .overlay .newuser-box p {            
+            text-align: right; 
+            line-height: 30px;                       
+        }
+    
+            #login .overlay .newuser-box p button {
+                margin: 0 0 0 20px;
+            }
+
+    #login .overlay .login-box {
+        display: table;
+        height: auto;
+        margin-top: 30px;
+    }
+
+        #login .overlay .login-box .apresentacao figure.separator {
+            margin: 15px 0;
+        }   
+
+        #login .overlay .login-box .apresentacao p {
+            text-align: center;
+        }
+
+        #login .overlay .login-box form {
+            background-color: rgba(0, 0, 0, 0.3); 
+            padding: 15px;            
+        }
+
+            #login .overlay .login-box form a {
+                text-decoration: none;
+                color: #105F68;
+            }
+
+            #login .overlay .login-box form figure {
+                position: absolute;
+                right: 3px;
+                top: -11px;
+            }
+
+#benefits {
+    padding: 20px 0;
+}
+
+    #benefits h5 {
+        color: #555555;
+        font-family: "Lato",sans-serif;
+        font-weight: 700;    
+        text-align: center;        
+    }
+
+    #benefits p {
+        font-family: Helvetica,Arial;
+        font-size: 12px;
+        padding: 5px 0 10px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+/*************************************/
+/*********** TELA CADASTRO ***********/
+/*************************************/
+
+#content .table-cobrancas a {
+    text-decoration: none;
+}
+
+    #content .table-cobrancas a span.icon-eye,
+    #content .table-cobrancas a span.icon-download {
+        color: #105F68;
+        font-size: 15px;
+    }
+
+/*************************************/
+/************ HEADER COMUM ***********/
+/*************************************/
+
+header {
+    width: 100%;
+    background-color: #105F68;    
+    padding: 8px 0;
+}
+    header .logotipo {
+        margin: 8px 0 0 0;
+    }
+
+    header .user-data {
+        height: auto;
+        float: right;
+    }
+
+        header .user-data .menu-services {
+            margin-right: 15px;
+            padding: 4px 0;
+        }
+
+            header .user-data .menu-services ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+
+                header .user-data .menu-services ul li {
+                    float: left;
+                    margin-left: 10px;
+                }
+
+                header .user-data .menu-services ul li:first-child {
+                    margin-left: 0;
+                }
+
+            header .user-data .dropdown {
+                border-left: 1px solid #ffffff;
+            }
+
+                header .user-data .dropdown figure {
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 14px;
+                    overflow: hidden;
+                    display: inline-block;    
+                    margin-right: 5px;
+                    vertical-align: middle;    
+                }
+
+                    header .user-data .dropdown figure img {           
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    header .user-data .dropdown figure span {           
+                        font-size: 22px;
+                    }
+            
+            header .user-data .dropdown-menu {
+                border: 0 none;
+                border-radius: 2px 0 2px 2px;
+                min-width: 176px;
+                margin-top: 0;
+                padding: 5px;
+                right: 13px;
+                top: 65px;
+                background-color: #105F68;
+            }
+
+                header .user-data .dropdown-menu > li > a {
+                    clear: both;
+                    color: #ffffff;
+                    display: block;
+                    font-weight: normal;
+                    line-height: 1.42857;
+                    padding: 3px 10px;
+                    white-space: nowrap;
+                }
+
+                    header .user-data .dropdown-menu > li > a:hover, 
+                    header .user-data .dropdown-menu > li > a:focus {
+                        background-color: #105F68;
+                        text-decoration: none;
+                    }
+
+            header .user-data .dropdown-menu::after {
+                border-bottom: 6px solid #105F68;
+                border-left: 6px solid rgba(0, 0, 0, 0);
+                border-right: 6px solid rgba(0, 0, 0, 0);
+                content: "";
+                display: inline-block;
+                position: absolute;
+                right: 10px;
+                top: -6px;
+            }
+
+/*************************************/
+/************ FOOTER COMUM ***********/
+/*************************************/
+
+footer {    
+    padding: 5px 0;
+    margin-top: 30px;
+}
+
+    footer p {
+        font-family: Helvetica,Arial;
+        font-size: 11px;
+        color: #555555;        
+    }
+
+        footer p.copyright {
+            text-align: left;
+        }
+
+        footer p.all {
+            text-align: right;
+        }
+
+/* BUG MOZZILA */
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+@media only screen and (max-width : 1200px) {
+}/*/mediaquery*/
+
+@media only screen and (max-width : 992px) {
+}/*/mediaquery*/
+
+@media only screen and (max-width : 768px) {
+}/*/mediaquery*/
+
+@media only screen and (max-width : 480px) {
+}/*/mediaquery*/
+
+@media only screen and (max-width : 320px) {
+}/*/mediaquery*/

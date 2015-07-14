@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+        <!-- HEADER -->
+		<pagoo-header user="usuario" entidade="entidade"></pagoo-header>
+
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-24">
+                        <form name="formCobranca" ng-submit="gerarBorderoBoletoCobranca(cobranca)" role="form" novalidate>
+                            <fieldset>                     
+                                <div class="row">
+                                    <div class="col-md-24">
+                                        <h3 class="title">Dados do Proprietário (Sacado)</h3>
+                                        <div class="divider"></div>
+                                    </div>
+                                </div>                                                   
+                                <div class="row">
+                                    <div class="col-md-24">                                        
+                                        <div class="form-group">
+                                            <label for="name_user">Nome*</label>
+                                            <input id="name_user" class="form-control" type="text" name="nome"ng-model="compra.comprador.nome" required limit="false" mask="#" mask-validate="false" />
+                                        </div>
+                                        <div ng-show="formCobranca.nome.$invalid && formCobranca.nome.$dirty" class="alert alert-danger" role="alert">Campo Obrigatório!</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="user_num">CPF/CNPJ*</label>                                        
+                                            <input id="user_num" class="form-control" type="text" name="cpfcnpj" ng-model="compra.comprador.cpfcnpj" ui-br-cpfcnpj-mask required />
+                                        </div>
+                                        <div  ng-show="formCobranca.cpfcnpj.$invalid && formCobranca.cpfcnpj.$dirty" class="alert alert-danger" role="alert">CPF ou CNPJ inválido!</div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="user_placa">Placa (AAA-9999)*</label>                                        
+                                            <input id="user_placa" class="form-control" type="text" name="placa" ng-model="compra.comprador.placa" required limit="true" mask="AAA-9999" restrict="reject" mask-validate="true"  />
+                                        </div>
+                                        <div ng-show="formCobranca.placa.$invalid && formCobranca.placa.$dirty" class="alert alert-danger" role="alert">Placa Inválida!</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-24">
+                                        <h3 class="title">Serviço Contratado</h3>
+                                        <div class="divider"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                		<div class="col-md-12">
+											<select required ng-model="compra.servicoContratado" ng-options="(tipoServico.nome + ' - ' + (tipoServico.valor | currency)) for tipoServico in listaTipoServicos" class="form-control"></select>                                		
+                                		</div>
+                                </div>
+                                <div class="row">
+                                		<div class="col-md-8">
+											      &nbsp;                        		
+                                		</div>
+                                </div>                                
+                                <div class="row">                                    
+<!--                                     <div class="col-md-20"> -->
+<!--                                         <div class="form-group"> -->
+<!--                                             <div >{{compra | json}}</div> -->
+<!--                                         </div> -->
+<!--                                     </div>   -->
+<!--                                     <div class="col-md-20" ng-show="!!err"> -->
+<!--                                         <div class="form-group"> -->
+<!--                                             <div class="alert alert-danger" role="alert">Erro tentando executar cobrança! : {{err | json}}</div>  -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+                                    <div class="col-md-20" ng-show="!!success">
+                                        <div class="form-group">
+                                            <div class="alert text-success" role="alert">Sucesso gerando cobrança!</div> 
+                                        </div>
+                                    </div>                                                                           
+                                                             
+                                    <div class="col-md-4">
+                                        <div class="form-group no-margin">
+                                            <button class="btn btn-default pull-right bt-all"  type="submit"  ng-disabled="formCobranca.$invalid">Gerar Borderô</button>
+                                        </div> 
+                                    </div>                                                            
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+		<pagoo-footer></pagoo-footer>

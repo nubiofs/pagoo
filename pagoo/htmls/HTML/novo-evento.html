@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        
+        <!-- METAS FAVICON -->        
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+        <!-- METAS PADROES -->        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="description" content="Pagoo - Seu novo Gateway de Pagamento." />
+        <meta name="keywords" content="Pagamento" />
+        <meta name="author" content="Infosolo" />
+        <title>Pagoo - Seu novo Gateway de Pagamento.</title>               
+        
+        <!-- ESTILOS -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- HACK PARA IE8 -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+            <script src="js/respond.js"></script>
+        <![endif]-->
+
+    </head>
+ 
+    <body>
+        
+        <!-- HEADER -->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="img/logo-bar.png" height="30" width="120" alt="Pagoo - Seu novo Gateway de Pagamento" class="logotipo">
+                    </div>
+                    <div class="col-md-18">
+                        <div class="user-data"> 
+                            <div class="dropdown pull-right">
+                                <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                    <figure>
+                                        <!-- <img src="img/profile.jpg" height="150" width="150" alt="Foto do Perfil"> -->
+                                        <span class="icon-user"></span>
+                                    </figure>Cristiane Sousa [DF]
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1" href="#">Meu Perfil</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1" href="#">Sair</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="menu-services pull-right">
+                                <ul>
+                                    <li>
+                                        <a href="novo-evento.html" class="btn btn-primary">Nova Cobrança</a>
+                                    </li>
+                                    <li>
+                                        <a href="cadastrar-evento.html" class="btn btn-primary">Consultar Cobranças</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-24">
+                        <form action="" method="post" role="form">
+                            <fieldset>                     
+                                <div class="row">
+                                    <div class="col-md-24">
+                                        <h3 class="title">Dados do Usuário</h3>
+                                        <div class="divider"></div>
+                                    </div>
+                                </div>                                                   
+                                <div class="row">
+                                    <div class="col-md-24">                                        
+                                        <div class="form-group">
+                                            <label for="name_user">Nome*</label>
+                                            <input id="name_user" class="form-control" type="text" name="name_user" placeholder="Seu Nome">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="user_num">CPF/CNPJ*</label>                                        
+                                            <input id="user_num" class="form-control" type="text" name="user_num" placeholder="seu CPF ou CNPJ">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="user_placa">Placa*</label>                                        
+                                            <input id="user_placa" class="form-control" type="text" name="user_placa" placeholder="Sua Placa">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-24">
+                                        <h3 class="title">Gerar Placa</h3>
+                                        <div class="divider"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>
+                                            <input type="radio" name="generate_p" value="">Automóvel R$70,00 (o par)
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>
+                                            <input type="radio" name="generate_p" value="">Motocicleta R$30,00 (unidade)
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>
+                                            <input type="radio" name="generate_p" value="">Reboque R$35,00 (unidade)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-24">
+                                        <h3 class="title">Gerar Tarjeta</h3>
+                                        <div class="divider"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>
+                                            <input type="radio" name="generate_t" value="">Automóvel R$20,00 (o par) ou R$10,00 (unidade)
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>
+                                            <input type="radio" name="generate_t" value="">Motocicleta R$8,00 (unidade)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">                                    
+                                    <div class="col-md-20">
+                                        <div class="form-group">
+                                            <div class="alert alert-danger" role="alert">Campos com * são de preenchimento obrigatório.</div>
+                                        </div>
+                                    </div>                            
+                                    <div class="col-md-4">
+                                        <div class="form-group no-margin">
+                                            <button class="btn btn-default pull-right bt-all" type="submit">Gerar Guia</button>
+                                        </div> 
+                                    </div>                                                            
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="copyright">Copyright © 2015 Infosolo Inc.</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="all">Todos os direitos reservados</p>                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPTS -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/scrollReveal.min.js"></script>
+        <script src="js/config.js"></script>
+
+    </body>
+
+</html>
