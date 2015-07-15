@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -15,7 +14,6 @@ import javax.persistence.EntityManager;
 
 import org.slf4j.Logger;
 
-import br.com.ael.infosolo.pagoo.data.CobrancaRepository;
 import br.com.ael.infosolo.pagoo.data.TipoServicoRepository;
 import br.com.ael.infosolo.pagoo.data.UsuarioRepository;
 import br.com.ael.infosolo.pagoo.dto.CompraDTO;
@@ -61,9 +59,6 @@ public class CobrancaService {
 	@Inject 
 	private UsuarioRepository usuarioRepository;
 	
-	@Inject
-	private CobrancaRepository cobrancaRepository;
-	
 	@Inject 
 	private TipoServicoRepository tipoServicoRepository;
 	
@@ -71,16 +66,6 @@ public class CobrancaService {
 	@Inject
 	private Logger logger;
 		
-	/**
-	 * Retorna o boleto / guia / bordero
-	 * @param nossoNumero
-	 * @param nossoNumero2
-	 * @return
-	 */
-	public byte[] recuperarGuiaArrecadacaoFisica(String nossoNumero, String nossoNumero2){
-		//byte[] guia = cobrancaBancariaNegocio.retornarBoletoFisico(nossoNumero, nossoNumero2);
-		return null;
-	}
 	
 	/**
 	 * Finaliza a cobranca de uma compra. :)

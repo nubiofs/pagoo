@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 
 import br.com.infosolo.cobranca.negocio.ejb.CobrancaBancariaNegocioLocal;
@@ -19,7 +18,10 @@ import br.com.infosolo.cobranca.negocio.ejb.CobrancaBancariaNegocioLocal;
 import com.lowagie.text.pdf.codec.Base64;
 
 /**
- * @author Arun Gupta
+ * Servlet para download de PDFs em Base64.
+ * @author David Faulstich (davidfdr@gmail.com)
+ * @since 15/07/2015
+ *
  */
 @WebServlet("/downloadServlet")
 public class DownloadServlet extends HttpServlet {

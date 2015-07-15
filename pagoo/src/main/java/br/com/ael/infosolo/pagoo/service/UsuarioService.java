@@ -24,8 +24,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 
-import org.slf4j.Logger;
-
 import br.com.ael.infosolo.pagoo.data.UsuarioRepository;
 import br.com.ael.infosolo.pagoo.model.Usuario;
 
