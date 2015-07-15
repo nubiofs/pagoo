@@ -20,15 +20,18 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -72,6 +75,21 @@ public class CobrancaRestService {
 	
 	@Inject 
 	private CobrancaRepository cobrancaRepository;
+	
+	
+	
+	@GET
+    @Path("/{id:[0-9][0-9]*}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Cobranca lookupCobrancaById(@PathParam("id") long id) {
+    	Cobranca cobranca = cobrancaRepository.findById(id);
+        if (cobranca == null) {
+            throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+        return cobranca;
+    }
+    
+    
     /**
      * Encapsula a chamada para criação do boleto / borderô / cobrança passando um serviço adquirido /utilizado e um comprador (sacado).
      * @return
@@ -105,6 +123,7 @@ public class CobrancaRestService {
     	if(!CollectionUtils.isEmpty(servicos)){
     		res = new ArrayList<ConsultaDTO>(servicos.size());
     		for (Servico s : servicos) {
+    			Set<Cobranca> cobrancas = s.getEvento().getCobrancas();
     			ConsultaDTO c = new ConsultaDTO();
     			CompradorDTO comp = new CompradorDTO();
     			comp.setNome(s.getEvento().getComprador().getNome());
@@ -119,6 +138,9 @@ public class CobrancaRestService {
     			c.setComprador(comp);
     			c.setServicoContratado(sc);
     			c.setIdEntidade(idEntidade);
+    			Cobranca cobranca = cobrancas.iterator().next(); // PEGA O PRIMEIRO POIS POR ENQUANTO É SOMENTE UMA COBRANCA POR SERVICO. TODO ALTERAR PARA PEGAR O BOLETO MAIS RECENTE
+    			c.setNossoNumero(cobranca.getNossoNumero());
+    			c.setNossoNumero2(cobranca.getNossoNumero2());
     			res.add(c);
 				
 			}
@@ -134,7 +156,7 @@ public class CobrancaRestService {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/gerarbordero")
+    @Path("/gerarborderoTeste")
     public Response gerarGuiaArrecadacaoBoletoBordero(CompraDTO compra){
 
 
@@ -202,6 +224,8 @@ public class CobrancaRestService {
 		
 		BoletoDTO boletoDTO = cobrancaBancariaNegocio.gerarBoletoAvulso(cedente, sacado, dataVencimento, 100D, null, null, null, null, null,true);
 		
+		byte[] boletofisicoUmCodigoBarras = cobrancaBancariaNegocio.retornarBoletoFisico(boletoDTO.getNossoNumero(), null);
+		
 		System.out.println("Boleto gerado com sucesso para cedente " + boletoDTO.getCedente().getCodigoConvenio());
 		System.out.println("Nosso numero: " + boletoDTO.getNossoNumero());
 		
@@ -211,11 +235,19 @@ public class CobrancaRestService {
         
 		for (BoletoDTO boletoDTO2 : boletos) {
 			System.out.println("Boleto gerado com sucesso para cedente " + boletoDTO2.getCedente().getCodigoConvenio());
+			
 			System.out.println("Nosso numero: " + boletoDTO2.getNossoNumero());
 		}
+		
+		String nossoNumero1= boletos.get(0).getNossoNumero();
+		String nossoNumero2= boletos.get(1).getNossoNumero();
+		byte[] boletofisicoDoisCodigoBarras = cobrancaBancariaNegocio.retornarBoletoFisico(nossoNumero1, nossoNumero2);
+		
 		Response.ResponseBuilder builder = Response.status(Response.Status.CREATED).entity(boletos);
     	return builder.build();
     }
+    
+ 
 
 
 

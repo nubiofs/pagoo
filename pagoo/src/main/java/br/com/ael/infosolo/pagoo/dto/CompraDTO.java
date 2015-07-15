@@ -20,7 +20,33 @@ public class CompraDTO extends PagooDTO {
 	
 	private ServicoContratadoDTO servicoContratado;
 	
-	private ServicoContratadoDTO[] servicosContratados;;
+	private ServicoContratadoDTO[] servicosContratados;
+	
+	/**
+	 * Nosso numero do boleto gerado.
+	 */
+	private String nossoNumero;
+	
+	/**
+	 * Nosso numero do 2 boleto (segundo codigo de barras)
+	 */
+	private String nossoNumero2;
+
+	public String getNossoNumero() {
+		return nossoNumero;
+	}
+
+	public void setNossoNumero(String nossoNumero) {
+		this.nossoNumero = nossoNumero;
+	}
+
+	public String getNossoNumero2() {
+		return nossoNumero2;
+	}
+
+	public void setNossoNumero2(String nossoNumero2) {
+		this.nossoNumero2 = nossoNumero2;
+	}
 
 	public CompradorDTO getComprador() {
 		return comprador;

@@ -21,8 +21,40 @@ public class ConsultaDTO extends PagooDTO {
 	
 	private ServicoContratadoDTO servicoContratado;
 	
+	/**
+	 * Nosso numero do boleto principal ou unico. (Boleto principal em caso de duas guias)
+	 * TODO: esta no DTO para ja carregar os boletos para o link de download.
+	 */
+	private String nossoNumero;
+	
+	/**
+	 * Segundo nosso numero do segundo codigo de barras
+	 */
+	private String nossoNumero2;
+	
+	
+	
 	private Long idEntidade;
 	
+	
+	
+	
+	public String getNossoNumero() {
+		return nossoNumero;
+	}
+
+	public void setNossoNumero(String nossoNumero) {
+		this.nossoNumero = nossoNumero;
+	}
+
+	public String getNossoNumero2() {
+		return nossoNumero2;
+	}
+
+	public void setNossoNumero2(String nossoNumero2) {
+		this.nossoNumero2 = nossoNumero2;
+	}
+
 	public CompradorDTO getComprador() {
 		return comprador;
 	}

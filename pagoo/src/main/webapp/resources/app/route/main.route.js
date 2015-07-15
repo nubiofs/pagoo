@@ -50,15 +50,9 @@ app.config(['$stateProvider', '$urlRouterProvider','$httpProvider', '$locationPr
 		})
 		
 		.state('sucessocobranca', { 
-			url: '/sucessocobranca/:compra',
+			url: '/sucessocobranca/:compra/:idCobranca',
 			templateUrl: './sucesso-novo.html', 
-			controller : function($scope,$stateParams){
-				console.log($stateParams);
-				$scope.compra = angular.fromJson(atob($stateParams.compra));
-				var cpfcnpj = JSON.stringify(angular.fromJson($scope.compra.comprador.cpfcnpj));
-				$scope.showcpf = cpfcnpj.length == 11 ? true : false;
-				$scope.showcnpj = cpfcnpj.length == 14 ? true : false;
-			},
+			controller : 'SucessoCompraController',
 			data: {
 				security: true
 			},

@@ -20,6 +20,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.hibernate.validator.constraints.Length;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -59,6 +61,14 @@ public class Cobranca implements Serializable {
 
 	@Column(name="valor_repasse", nullable=false, precision=10, scale=4)
 	private BigDecimal valorRepasse;
+	
+	@Length(max=100)
+	@Column(name="nosso_numero", length=100)
+	private String nossoNumero;
+	
+	@Length(max=100)
+	@Column(name="nosso_numero_2", length=100)
+	private String nossoNumero2;
 
 	//bi-directional many-to-one association to ConvenioBancario
 	@ManyToOne
@@ -144,5 +154,23 @@ public class Cobranca implements Serializable {
 	public void setEventos(Set<Evento> eventos) {
 		this.eventos = eventos;
 	}
+
+	public String getNossoNumero() {
+		return nossoNumero;
+	}
+
+	public void setNossoNumero(String nossoNumero) {
+		this.nossoNumero = nossoNumero;
+	}
+
+	public String getNossoNumero2() {
+		return nossoNumero2;
+	}
+
+	public void setNossoNumero2(String nossoNumero2) {
+		this.nossoNumero2 = nossoNumero2;
+	}
+	
+	
 
 }

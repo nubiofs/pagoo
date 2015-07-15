@@ -46,11 +46,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row"  ng-show="formConsulta.cpfcnpj.$invalid && formConsulta.cpfcnpj.$dirty">
-                                	<div class="alert alert-danger col-md-10" role="alert">CPF / CNPJ Inválido!</div>
+                                <div  ng-show="formConsulta.cpfcnpj.$invalid && formConsulta.cpfcnpj.$dirty">
+                                	<div class="alert alert-danger" role="alert">CPF / CNPJ Inválido!</div>
                             	</div>
-                                <div class="row"  ng-show="!formConsulta.$dirty">
-                                	<div class="alert alert-danger col-md-10" role="alert">Pelo menos algum filtro é necessário.</div>
+                                <div ng-show="!formConsulta.$dirty">
+                                	<div class="alert alert-danger" role="alert">Pelo menos algum filtro é necessário.</div>
                             	</div>                            	
                             </fieldset>
                         </form>                        
@@ -106,9 +106,7 @@
                                         </td>
 -->
                                         <td>
-                                            <a href="">
-                                                <span class="icon-download"></span>
-                                            </a>
+                                            <pdf-download url="/pagoo/downloadServlet?nossonumero={{cob.nossoNumero}}&nossonumero2={{cob.nossoNumero2}}" filename="bordero_{{cob.nossoNumero}}_{{cob.nossoNumero2}}.pdf"></pdf-download>
                                         </td>
                                     </tr>
 <!--

@@ -213,6 +213,17 @@ table td {
     text-align: center;
 }
 
+table .btn-success,
+table .btn-success:hover,
+table .btn-success:active,
+table .btn-success:focus,
+table .btn-success:active:hover{
+  color: #fff;
+  background-color: #105F68;
+  border-color: #4cae4c;	
+}
+
+
 /*************************************/
 /************ TELA DE LOGIN **********/
 /*************************************/
