@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.hibernate.validator.constraints.Length;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.HashSet;
@@ -67,6 +69,10 @@ public class ConvenioBancario implements Serializable {
 		)
 	@JsonIgnore
 	private Set<Entidade> entidades = new HashSet<Entidade>();
+	
+	@Length(max=1)
+	@Column(name="tipo",length=1)
+	private String tipo;
 	
 	public ConvenioBancario() {
 	}
