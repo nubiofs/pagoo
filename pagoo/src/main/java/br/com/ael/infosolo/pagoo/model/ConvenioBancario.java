@@ -3,8 +3,12 @@ package br.com.ael.infosolo.pagoo.model;
 import java.io.Serializable;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -39,10 +43,31 @@ public class ConvenioBancario implements Serializable {
 	@Column(name="nome_banco", nullable=false, length=255)
 	private String nomeBanco;
 
+	@Column(name="ativo")
+	private Boolean ativo;
+	
+	@Column(name="cpfcnpj",length=14)
+	@Size(min = 12, max = 14)
+	private String cpfcnpj;
+	
 	//bi-directional many-to-one association to Cobranca
 	@OneToMany(mappedBy="convenioBancario")
 	private Set<Cobranca> cobrancas;
 
+	//bi-directional many-to-many association to Cobranca
+	@ManyToMany
+	@JoinTable(
+		name="convenio_x_entidade"
+		, joinColumns={
+			@JoinColumn(name="id_convenio", nullable=false)
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="id_entidade", nullable=false)
+			}
+		)
+	@JsonIgnore
+	private Set<Entidade> entidades = new HashSet<Entidade>();
+	
 	public ConvenioBancario() {
 	}
 
@@ -115,5 +140,31 @@ public class ConvenioBancario implements Serializable {
 
 		return cobranca;
 	}
+
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public String getCpfcnpj() {
+		return cpfcnpj;
+	}
+
+	public void setCpfcnpj(String cpfcnpj) {
+		this.cpfcnpj = cpfcnpj;
+	}
+
+	public Set<Entidade> getEntidades() {
+		return entidades;
+	}
+
+	public void setEntidades(Set<Entidade> entidades) {
+		this.entidades = entidades;
+	}
+	
+	
 
 }

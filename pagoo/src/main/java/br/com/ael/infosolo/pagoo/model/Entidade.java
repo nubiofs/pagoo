@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -110,6 +112,20 @@ public class Entidade implements Serializable {
 	@OneToMany(mappedBy="entidade")
 	@JsonIgnore
 	private Set<Usuario> usuarios = new HashSet<Usuario>();
+	
+	
+	@ManyToMany
+	@JoinTable(
+		name="convenio_x_entidade"
+		, joinColumns={
+			@JoinColumn(name="id_entidade", nullable=false)
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="id_convenio", nullable=false)
+			}
+		)
+	@JsonIgnore
+	private Set<ConvenioBancario> convenios = new HashSet<ConvenioBancario>();
 
 	public Entidade() {
 	}
@@ -268,6 +284,14 @@ public class Entidade implements Serializable {
 
 	public void setIdSegmento(Long idSegmento) {
 		this.idSegmento = idSegmento;
+	}
+
+	public Set<ConvenioBancario> getConvenios() {
+		return convenios;
+	}
+
+	public void setConvenios(Set<ConvenioBancario> convenios) {
+		this.convenios = convenios;
 	}
 	
 
