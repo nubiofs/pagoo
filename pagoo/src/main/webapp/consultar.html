@@ -59,6 +59,7 @@
                 <div class="row">
                     <div class="col-md-24">
                         <h3 class="title">Cobranças Geradas</h3>
+                        <input type="search" ng-model="f" placeholder="Filtrar nos resultados..." />
                         <div class="divider"></div>
                     </div>
                 </div>
@@ -89,7 +90,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="cob in cobrancas">
+                                    <tr ng-repeat="cob in cobrancas | filter:f as results">
                                         <td>{{$index}}</td>
                                         <td>{{cob.comprador.nome}}</td>
                                         <td ng-if="cob.comprador.cpfcnpj.length == 11">{{cob.comprador.cpfcnpj | brCpf}}</td>
