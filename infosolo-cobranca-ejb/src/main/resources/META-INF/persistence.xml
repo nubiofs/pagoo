@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Cobranca Persistence!
+	David Reis (davidfdr@gmail.com)
+-->
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+version="2.1">
+             
+   <persistence-unit name="infosolo-cobraca" transaction-type="JTA">
+   	  <!-- ALTERAR PARA O DATASOURCE CORRETO QUANDO NECESSARIO -->
+      <jta-data-source>java:jboss/datasources/pagooDS</jta-data-source> 
+
+      <!-- ENTIDADES DO COBRANCA -->
+      <class>br.com.infosolo.cobranca.dominio.entidades.ArquivoRemessaEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.ArquivoRetornoEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.BancoEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.BoletoEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.BoletoEntidadeLite</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.BoletoMovimentoRetornoEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.CedenteEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.CedenteEntidadePK</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.CobrancaEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.ContaBancariaEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.EnderecoEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.EspecieTituloEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.InstrucoesBancariaEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.LeiauteArquivoEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.MovimentoRetornoEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.SacadoEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.SacadorAvalistaEntidade</class>
+      <class>br.com.infosolo.cobranca.dominio.entidades.RetornoDetalheEntidade</class>
+      <properties>
+         <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+         <property name="hibernate.show_sql" value="true"/>
+         <property name="hibernate.format_sql" value="true"/>
+         <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+      </properties>
+   </persistence-unit>
+</persistence>

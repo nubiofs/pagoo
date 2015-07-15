@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.ael.infosolo.cobranca</groupId>
+	<artifactId>infosolo-cobranca-ejb</artifactId>
+	<version>1.0.83-SNAPSHOT</version>
+	<packaging>ejb</packaging>
+	<description>Projeto de cobranca com todo o negocio de geracao de boletos da infosolo. Adequado para wildfly 8.</description>
+	<url>http://www.infosolo.com.br</url>
+    <name>Cobranca EJB module</name>
+    
+<!-- WILDFLY DEPENDENCIES -->
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<distribution>repo</distribution>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+		</license>
+	</licenses>
+
+	<repositories>
+        <repository>
+            <id>JBoss Repository</id>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>	
+		<repository>
+			<id>redhat-techpreview-all-repository</id>
+			<url>https://maven.repository.redhat.com/techpreview/all/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>redhat-techpreview-all-repository</id>
+			<url>https://maven.repository.redhat.com/techpreview/all/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
+
+		<version.jboss.bom.wildfly>8.1.0.Final</version.jboss.bom.wildfly>
+
+		<version.surefire.plugin>2.10</version.surefire.plugin>
+	
+		<version.war.plugin>2.1.1</version.war.plugin>
+
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+	
+	</properties>	
+	
+	<dependencyManagement>
+		<dependencies>
+    		<dependency>
+                <groupId>org.jboss.spec</groupId>
+                <artifactId>jboss-javaee-7.0</artifactId>
+                <version>1.0.0.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>	
+            
+            <dependency>
+				<groupId>org.wildfly.bom</groupId>
+				<artifactId>jboss-javaee-7.0-with-hibernate</artifactId>
+				<version>${version.jboss.bom.wildfly}</version>
+                <type>pom</type>
+                <scope>import</scope>				
+			</dependency>
+			
+			<dependency>
+				<groupId>org.wildfly.bom</groupId>
+				<artifactId>jboss-javaee-7.0-with-tools</artifactId>
+				<version>${version.jboss.bom.wildfly}</version>
+                <type>pom</type>
+                <scope>import</scope>				
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>	
+	
+    <!-- END WILDFLY DEPENDENCIES -->    
+
+    <dependencies>
+
+  		<dependency>
+            <groupId>org.jboss.spec.javax.ejb</groupId>
+            <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+        <!-- Import the JPA API, we use provided scope as the API is included in
+            JBoss AS 7 -->
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+        <!-- JSR-303 (Bean Validation) Implementation -->
+        <!-- Provides portable constraints such as @Email -->
+        <!-- Hibernate Validator is shipped in JBoss AS 7 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!-- COMUM INFOSOLO -->
+
+        <dependency>
+            <groupId>br.com.ael.infosolo</groupId>
+            <artifactId>infosolo-comum</artifactId>
+            <version>1.0.83-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.ael.infosolo.cobranca</groupId>
+            <artifactId>infosolo-cobranca-comum</artifactId>
+            <type>jar</type>
+            <version>1.0.83-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        
+       <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+            <scope>provided</scope>
+        </dependency>        
+
+        <!-- OTHER DEPENDENCIES -->
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>javax.mail-api</artifactId>
+			<version>1.5.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>3.1.1.RELEASE</version>
+		</dependency>
+
+
+        <!-- Test scope dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+  
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <!-- Tell Maven we are using EJB 3.1 -->
+                    <ejbVersion>3.2</ejbVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <!-- The default profile skips all tests, though you can tune it to run
+                just unit tests based on a custom pattern -->
+            <!-- Seperate profiles are provided for running all tests, including Arquillian
+                tests that execute in the specified container -->
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.4.3</version>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <!-- We add the JBoss repository as we need the JBoss AS connectors for
+                Arquillian -->
+            <repositories>
+                <!-- The JBoss Community public repository is a composite repository
+                    of several major repositories -->
+                <!-- see http://community.jboss.org/wiki/MavenGettingStarted-Users -->
+                <repository>
+                    <id>jboss-public-repository</id>
+                    <name>JBoss Repository</name>
+                    <url>http://repository.jboss.org/nexus/content/groups/public</url>
+                    <!-- These optional flags are designed to speed up your builds by reducing
+                        remote server calls -->
+                    <releases>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>jboss-public-repository</id>
+                    <name>JBoss Repository</name>
+                    <url>http://repository.jboss.org/nexus/content/groups/public</url>
+                    <releases>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+
+        </profile>
+
+        <profile>
+            <!-- We add the JBoss repository as we need the JBoss AS connectors for
+                Arquillian -->
+            <repositories>
+                <!-- The JBoss Community public repository is a composite repository
+                    of several major repositories -->
+                <!-- see http://community.jboss.org/wiki/MavenGettingStarted-Users -->
+                <repository>
+                    <id>jboss-public-repository</id>
+                    <name>JBoss Repository</name>
+                    <url>http://repository.jboss.org/nexus/content/groups/public</url>
+                    <!-- These optional flags are designed to speed up your builds by reducing
+                        remote server calls -->
+                    <releases>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>jboss-public-repository</id>
+                    <name>JBoss Repository</name>
+                    <url>http://repository.jboss.org/nexus/content/groups/public</url>
+                    <releases>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+
+        </profile>
+
+    </profiles>
+
+</project>
