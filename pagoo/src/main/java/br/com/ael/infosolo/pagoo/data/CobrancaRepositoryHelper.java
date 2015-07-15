@@ -103,7 +103,7 @@ final public class CobrancaRepositoryHelper {
 			query.setParameter("idEntidade", idEntidade);
 		}
 		
-		
+		query.setMaxResults(100); // FIXA EM 100 RESULTADOS NA PAGINA
 		
 		return query;
 	}
