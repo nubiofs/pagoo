@@ -1,7 +1,9 @@
 package br.com.infosolo.cobranca.dominio.entidades;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -15,9 +17,10 @@ public class CobrancaEntidade implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="COBRANCA_IDCOBRANCA_GENERATOR", sequenceName="SQ_COBRANCA")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="COBRANCA_IDCOBRANCA_GENERATOR")
-	@Column(name="id_cobranca", unique=true, nullable=false, precision=131089)
+	//@SequenceGenerator(name="COBRANCA_IDCOBRANCA_GENERATOR", sequenceName="SQ_COBRANCA")
+	//@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="COBRANCA_IDCOBRANCA_GENERATOR")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id_cobranca", unique=true, nullable=false)
 	private Long idCobranca;
 
 	//bi-directional many-to-one association to BoletoEntidade

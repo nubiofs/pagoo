@@ -2,7 +2,7 @@ package br.com.infosolo.cobranca.boleto;
 
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import br.com.infosolo.cobranca.boleto.guia.CodigoDeBarras;
 import br.com.infosolo.cobranca.util.AbstractLinhaDeCampos;

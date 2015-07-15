@@ -8,7 +8,7 @@ import java.text.Format;
 import java.text.ParseException;
 import java.util.Date;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import br.com.infosolo.comum.util.TextoUtil;
 

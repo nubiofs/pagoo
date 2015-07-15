@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * 
  */
 @Entity
-@Table(name="cobranca")
+@Table(name="cobranca_pagoo")
 @NamedQuery(name="Cobranca.findAll", query="SELECT c FROM Cobranca c")
 @XmlRootElement
 public class Cobranca implements Serializable {

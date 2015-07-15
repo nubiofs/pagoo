@@ -6,8 +6,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import br.com.infosolo.cobranca.boleto.campolivre.CampoLivre;
 import br.com.infosolo.cobranca.dominio.boleto.Boleto;
@@ -16,7 +16,6 @@ import br.com.infosolo.cobranca.util.AbstractLinhaDeCampos;
 import br.com.infosolo.cobranca.util.BancoUtil;
 import br.com.infosolo.cobranca.util.Campo;
 import br.com.infosolo.cobranca.util.Preenchedor;
-import br.com.infosolo.comum.util.ArquivoUtil;
 import br.com.infosolo.comum.util.Logger;
 
 

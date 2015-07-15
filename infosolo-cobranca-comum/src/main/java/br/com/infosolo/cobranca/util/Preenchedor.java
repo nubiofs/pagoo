@@ -2,7 +2,7 @@ package br.com.infosolo.cobranca.util;
 
 import java.io.Serializable;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import br.com.infosolo.comum.util.TextoUtil;
 

@@ -13,6 +13,7 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
@@ -34,7 +35,7 @@ public class EnderecoEntidade implements Serializable {
 	//@SequenceGenerator(name="ENDERECO_IDENDERECO_GENERATOR", sequenceName="COBRANCA.SQ_ENDERECO")
 	//@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ENDERECO_IDENDERECO_GENERATOR")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_endereco", unique=true, nullable=false, precision=131089)
+	@Column(name="id_endereco", unique=true, nullable=false)
 	private Long idEndereco;
 
 	@Column(length=200)

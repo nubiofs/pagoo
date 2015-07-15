@@ -16,9 +16,12 @@
  */
 package br.com.ael.infosolo.pagoo.rest;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -40,6 +43,12 @@ import br.com.ael.infosolo.pagoo.dto.ServicoContratadoDTO;
 import br.com.ael.infosolo.pagoo.model.Cobranca;
 import br.com.ael.infosolo.pagoo.model.Servico;
 import br.com.ael.infosolo.pagoo.service.CobrancaService;
+import br.com.infosolo.cobranca.dominio.dto.BoletoDTO;
+import br.com.infosolo.cobranca.dominio.dto.CedenteDTO;
+import br.com.infosolo.cobranca.dominio.dto.EnderecoDTO;
+import br.com.infosolo.cobranca.dominio.dto.SacadoDTO;
+import br.com.infosolo.cobranca.negocio.ejb.CobrancaBancariaNegocioLocal;
+import br.com.infosolo.comum.util.DataUtil;
 
 /**
  * Endpoint rest for para geração dos borderôs / cobrancas.
@@ -50,6 +59,10 @@ import br.com.ael.infosolo.pagoo.service.CobrancaService;
 @Path("/cobranca")
 @RequestScoped
 public class CobrancaRestService {
+	
+	
+	@EJB
+	private CobrancaBancariaNegocioLocal cobrancaBancariaNegocio;
 	
 	@Inject
 	private Logger logger;
@@ -115,6 +128,93 @@ public class CobrancaRestService {
     	// EM VIRTUDE DO HORARIO AVANÇADO DA NOITE E PRAZO IMPOSSÍVEL TERÁ QUE FICAR ASSIM MESMO.
     	
     	return res;
+    }
+    
+    
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/gerarbordero")
+    public Response gerarGuiaArrecadacaoBoletoBordero(CompraDTO compra){
+
+
+		//ArrayList<BoletoDTO> boletos = new ArrayList<BoletoDTO>();
+		
+		Date dataVencimento = null;
+		try {
+			dataVencimento = DataUtil.getData("27/07/2015");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		EnderecoDTO endereco = new EnderecoDTO();
+		endereco.setLogradouro("SQN 414 BL Z APTO 554");
+		endereco.setBairro("ASA NORTE");
+		endereco.setCidade("BRASILIA");
+		endereco.setUf("DF");
+		endereco.setCep("70000000");
+		
+		SacadoDTO sacado = new SacadoDTO();
+		sacado.setCpfCnpjSacado("75342862000100");
+		sacado.setNome("João Fulano da Silva");
+		sacado.getEnderecos().add(endereco);
+		
+		CedenteDTO cedente = new CedenteDTO();
+		cedente.setCodigoConvenio(new Long("123456"));
+		cedente.setCpfCnpjCedente("10213834000139");
+		
+		CedenteDTO cedente2 = new CedenteDTO();
+		cedente2.setCodigoConvenio(new Long("10112048"));
+		cedente2.setCpfCnpjCedente("17279056000120");
+		
+		// Boleto arrecadacao relatorio
+	    List<BoletoDTO> boletos = new ArrayList<BoletoDTO>();
+				
+
+		BoletoDTO boleto = new BoletoDTO();
+		boleto.setDataVencimento(dataVencimento);
+		boleto.setValorBoleto(1.14D);
+		boleto.setSacado(sacado);
+		boleto.setCedente(cedente);
+		boleto.setInstrucoesBancarias("Pagável em qualquer agência do Banco do Brasil SA\nCRDD - Conselho Regional dos Despachantes - DF\nInfosolo LTDA\nwww.infosolo.com.br");
+		boleto.setNumeroDocumento("27");
+		boleto.setDataEmissao(new Date());
+		
+		BoletoDTO boleto2 = new BoletoDTO();
+		boleto2.setDataVencimento(dataVencimento);
+		boleto2.setValorBoleto(275D);
+		boleto2.setSacado(sacado);
+		boleto2.setInstrucoesBancarias("Pagável em qualquer agência do Banco do Brasil SA\n CRDD - Conselho Regional dos Despachantes - DF\nInfosolo LTDA\nwww.infosolo.com.br");
+		boleto2.setCedente(cedente2);
+		boleto2.setNumeroDocumento("27");
+		boleto2.setDataEmissao(new Date());
+		
+	
+		boletos.add(boleto);
+		boletos.add(boleto2);
+		
+
+//		List<BoletoDTO> boletosResposta = cobrancaBancariaNegocio.registrarCobrancaBancaria(boletos);
+//		for (BoletoDTO boletoResposta : boletosResposta) {
+//			System.out.println("-> Número documento: " + boletoResposta.getNumeroDocumento());
+//			System.out.println("-> Nosso numero: " + boletoResposta.getNossoNumero());
+//		}
+		
+		BoletoDTO boletoDTO = cobrancaBancariaNegocio.gerarBoletoAvulso(cedente, sacado, dataVencimento, 100D, null, null, null, null, null,true);
+		
+		System.out.println("Boleto gerado com sucesso para cedente " + boletoDTO.getCedente().getCodigoConvenio());
+		System.out.println("Nosso numero: " + boletoDTO.getNossoNumero());
+		
+        boletos = cobrancaBancariaNegocio.gerarBoletoArrecadacao(boletos);
+        
+        System.out.println(" --------------------------------------------------------------------------------------------------- ");
+        
+		for (BoletoDTO boletoDTO2 : boletos) {
+			System.out.println("Boleto gerado com sucesso para cedente " + boletoDTO2.getCedente().getCodigoConvenio());
+			System.out.println("Nosso numero: " + boletoDTO2.getNossoNumero());
+		}
+		Response.ResponseBuilder builder = Response.status(Response.Status.CREATED).entity(boletos);
+    	return builder.build();
     }
 
 

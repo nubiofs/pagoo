@@ -2,7 +2,7 @@ package br.com.infosolo.cobranca.boleto.guia;
 
 import java.math.BigDecimal;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import br.com.infosolo.cobranca.boleto.Modulo;
 import br.com.infosolo.cobranca.boleto.TipoSeguimento;

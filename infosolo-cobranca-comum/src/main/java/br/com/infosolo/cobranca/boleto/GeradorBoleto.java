@@ -1,6 +1,6 @@
 package br.com.infosolo.cobranca.boleto;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import br.com.infosolo.cobranca.dominio.boleto.Boleto;
 import br.com.infosolo.cobranca.excecao.CobrancaExcecao;
