@@ -1,5 +1,5 @@
 # pagoo
-Repositório Pagoo - Java + AngularJS + Resteasy + Wildfly 8.x (JBOSS)
+Repo Pagoo - Java + AngularJS + Resteasy + Wildfly 9.0.Final (JBOSS)
 
 
-#Author: David Faulstich Diniz Reis
+##Author: David Faulstich Diniz Reis
