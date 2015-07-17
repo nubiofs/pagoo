@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.ael</groupId>
 	<artifactId>pagoo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Pagoo</name>
 	<description>Pagamentos GOV Na Nuvem</description>
