@@ -49,15 +49,6 @@
 	<properties>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-		<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
-
-		<version.jboss.bom.wildfly>8.1.0.Final</version.jboss.bom.wildfly>
-
-		<version.surefire.plugin>2.10</version.surefire.plugin>
-	
-		<version.war.plugin>2.1.1</version.war.plugin>
-
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 	
@@ -65,66 +56,12 @@
 	
 	<dependencyManagement>
 		<dependencies>
-    		<dependency>
-                <groupId>org.jboss.spec</groupId>
-                <artifactId>jboss-javaee-7.0</artifactId>
-                <version>1.0.0.Final</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>	
-            
-            <dependency>
-				<groupId>org.wildfly.bom</groupId>
-				<artifactId>jboss-javaee-7.0-with-hibernate</artifactId>
-				<version>${version.jboss.bom.wildfly}</version>
-                <type>pom</type>
-                <scope>import</scope>				
-			</dependency>
-			
-			<dependency>
-				<groupId>org.wildfly.bom</groupId>
-				<artifactId>jboss-javaee-7.0-with-tools</artifactId>
-				<version>${version.jboss.bom.wildfly}</version>
-                <type>pom</type>
-                <scope>import</scope>				
-			</dependency>
+    	
 			
 		</dependencies>
 	</dependencyManagement>	
 
 	<dependencies>
-
-        <dependency>
-            <groupId>org.jboss.spec.javax.ejb</groupId>
-            <artifactId>jboss-ejb-api_3.2_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-
-		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>

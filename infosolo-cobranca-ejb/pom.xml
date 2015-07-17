@@ -54,7 +54,7 @@
 
 		<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
 
-		<version.jboss.bom.wildfly>8.1.0.Final</version.jboss.bom.wildfly>
+		<version.jboss.bom.wildfly>9.0.0.Final</version.jboss.bom.wildfly>
 
 		<version.surefire.plugin>2.10</version.surefire.plugin>
 	
@@ -75,21 +75,13 @@
                 <scope>import</scope>
             </dependency>	
             
-            <dependency>
-				<groupId>org.wildfly.bom</groupId>
-				<artifactId>jboss-javaee-7.0-with-hibernate</artifactId>
-				<version>${version.jboss.bom.wildfly}</version>
-                <type>pom</type>
-                <scope>import</scope>				
-			</dependency>
-			
 			<dependency>
 				<groupId>org.wildfly.bom</groupId>
-				<artifactId>jboss-javaee-7.0-with-tools</artifactId>
+				<artifactId>jboss-javaee-7.0-wildfly</artifactId>
 				<version>${version.jboss.bom.wildfly}</version>
-                <type>pom</type>
-                <scope>import</scope>				
-			</dependency>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>    
 			
 		</dependencies>
 	</dependencyManagement>	
@@ -181,12 +173,6 @@
 
 
         <!-- Test scope dependencies -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-
   
     </dependencies>
 
