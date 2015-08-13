@@ -1,8 +1,434 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        
+        <!-- METAS FAVICON -->        
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+        <!-- METAS PADROES -->        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="description" content="Pagoo - Seu novo Gateway de Pagamento." />
+        <meta name="keywords" content="Pagamento" />
+        <meta name="author" content="Infosolo" />
+        <title>Pagoo - Seu novo Gateway de Pagamento.</title>               
+        
+        <!-- ESTILOS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- HACK PARA IE8 -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+            <script src="js/respond.js"></script>
+        <![endif]-->
+
     </head>
+ 
     <body>
-    	<meta http-equiv="refresh" content="0; URL='a.html" />
+    
+    	<!-- MENU SCROLL -->
+        <nav id="nav-scroll">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<a class="logotipo" title="Pagoo" href="#topo">
+							<figure>
+								<img alt="Pagoo - Sua nova plataforma de Boletos" src="img/logotipo-pagoo-white.png" />
+							</figure>
+						</a>
+					</div>
+					<div class="col-sm-20">
+						<ul>
+							<li>
+								<a href="#how-works" title="Como Funciona">
+									<i class="fa fa-caret-right"></i>
+									Como Funciona
+								</a>
+							</li>
+							<li>
+								<a href="#benefits" title="Vantagens">
+									<i class="fa fa-caret-right"></i>
+									Vantagens
+								</a>
+							</li>
+							<li>
+								<a href="#plans" title="Preços">
+									<i class="fa fa-caret-right"></i>
+									Preços
+								</a>
+							</li>
+							<li>
+								<a href="a.html" class="login" title="Acessar o Sistema">
+									<i class="fa fa-user"></i>
+									Acesso
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+        
+        <!-- MENU MAIN -->
+        <nav id="nav-main">
+        	<div class="container">
+        		<div class="row margint25px">
+        			<div class="col-sm-6">
+        				<a href="javascript:;" class="logotipo">
+        					<figure>
+        						<img src="img/logotipo-pagoo.png" alt="Pagoo - Seu novo Gateway de Pagamento." width="300" height="95" />
+        					</figure>
+        				</a>
+        				<i class="fa fa-bars bt-nav visible-xs"></i>
+        			</div>
+        			<div class="col-sm-18 hidden-xs">
+        				<ul>
+        					<li>
+        						<a href="#how-works" title="Como Funciona">
+        							<i class="fa fa-caret-right"></i>
+        							Como Funciona
+        						</a>
+        					</li>
+        					<li>
+        						<a href="#benefits" title="Vantagens">
+        							<i class="fa fa-caret-right"></i>
+        							Vantagens
+        						</a>
+        					</li>
+        					<li>
+        						<a href="#plans" title="Preços">
+        							<i class="fa fa-caret-right"></i>
+        							Preços
+        						</a>
+        					</li>
+        					<li>
+        						<a href="a.html" target="_self" class="login" title="Acessar o Sistema">
+        							<i class="fa fa-user"></i>
+        							Acesso
+        						</a>
+        					</li>
+        				</ul>
+        			</div>
+        			
+        		</div>
+        	</div>
+        </nav>
+        
+        <!-- MENU MOBILE -->
+        <nav id="nav-mobile">
+        	<ul>
+				<li>
+					<a href="#how-works" title="Como Funciona">
+						Como Funciona
+					</a>
+				</li>
+				<li>
+					<a href="#benefits" title="Vantagens">
+						Vantagens
+					</a>
+				</li>
+				<li>
+					<a href="#plans" title="Preços">
+						Preços
+					</a>
+				</li>
+				<li>
+					<a href="a.html" target="_self" class="login" title="Acessar o Sistema">
+						Acesso
+					</a>
+				</li>
+			</ul>		
+        </nav>
+        
+        <!-- PRESENTATION -->
+        <header id="presentation">       
+            <div class="overlay"> 
+                <div class="container">                    
+                    <div class="row">
+						<div class="col-md-12">
+							<h1>Somos a sua mais nova Plataforma de Boletos</h1>
+							<p>Aceite pagamentos online no seu site, no celular, nas redes sociais e por e-mail, de forma simples, rápida e segura. </p>
+							<a href="a.html" class="login" title="Acessar o Sistema">Experimente agora <i class="fa fa-long-arrow-right"></i></a>
+						</div>                       
+                    </div>
+                </div>
+            </div>
+            <a href="#how-works" class="go" title="Como Funciona"><i class="fa fa-chevron-down"></i></a>
+        </header>
+        
+        <!-- HOW WORKS -->
+        <section id="how-works">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-md-24">
+            			<h2 class="title-section">Simples, direto na sua conta e o melhor, é grátis</h3>
+            			<h6 class="subtitle-section">Praticidade para você e seus clientes. Receba seus pagamentos via boleto direto na sua conta e sem taxa de intermediação. </h6>
+            		</div>
+            	</div>
+                <div class="row margint60px">
+                    <div class="col-md-6" data-sr="enter top, over 1s, move 800px">
+                    	<figure>
+                    		<img src="img/icon-user.png" class="img-responsive center-block" alt="Você cria sua Conta" width="128" height="128" />
+                    	</figure>
+                        <h5>Você cria sua Conta</h5>
+                        <p>Você ou algum responsável por sua instituição cria uma conta conosco.</p>
+                    </div>
+                    <div class="col-md-6" data-sr="enter bottom, over 1.3s, move 800px">
+                    	<figure>
+                    		<img src="img/icon-data.png" class="img-responsive center-block" alt="Define dados e emite o Boleto" width="128" height="128" />
+                    	</figure>
+                        <h5>Define dados e emite o Boleto</h5>
+                        <p>Cadastra seus dados e já se torna apto a emitir novos boletos.</p>
+                    </div>
+                    <div class="col-md-6" data-sr="enter top, over 1.6s, move 800px">
+                    	<figure>
+                    		<img src="img/icon-money.png" class="img-responsive center-block" alt="Recebe direto na sua conta" width="128" height="128" />
+                    	</figure>
+                        <h5>Recebe direto na sua conta</h5>
+                        <p>Receba seu dinheiro de forma integral direto na sua conta bancária.</p>
+                    </div>
+                    <div class="col-md-6" data-sr="enter bottom, over 1.9s, move 800px">
+                    	<figure>
+	                    	<img src="img/icon-payment.png" class="img-responsive center-block" alt="Acompanha os Pagamentos" width="128" height="128" />
+	                    </figure>
+                        <h5>Acompanha os Pagamentos</h5>
+                        <p>Gerencie e controle os boletos em atraso e aberto através do sistema.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PARALLAX -->
+        <section id="parallax">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-md-24">
+            			<h4 data-sr="enter top, over 1.5s, move 100px">Receber pagamentos nunca foi tão fácil. Pagoo, simples, fácil, rápido e seguro.</h4>
+            			<a href="a.html" class="login" title="Acessar o Sistema" data-sr="enter bottom, over 1.5s, move 100px">
+            				Experimente agora <i class="fa fa-long-arrow-right"></i>
+            			</a>
+            		</div>
+            	</div>
+            </div>
+        </section>
+        
+        <!-- BENEFITS -->
+        <section id="benefits">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-md-24">
+            			<h2 class="title-section">Agilidade, Inteligência e Personalização</h3>
+            			<h6 class="subtitle-section">Reduza os custos com impressão e distribuição ineficiente, ofereça segurança e praticidade para seus clientes.</h6>
+            		</div>
+            	</div>
+            	<div class="row margint60px">
+            		<div class="col-md-8">
+            			<section class="box" data-sr="opacity 0, over 1s">
+	            			<div class="rounded">
+	            				<i class="fa fa-space-shuttle"></i>
+	            			</div>
+	            			<h3>Agilidade</h3>
+	            			<h6>Seu boleto simplificado</h6>
+	            			<p>Tempo é dinheiro, e falando de boleto então. Através da Plataforma Pagoo seu boleto tem:</p>
+	            			<ul>
+	            				<li><i class="fa fa-caret-right"></i>Emissão com 1 clique</li>
+	            				<li><i class="fa fa-caret-right"></i>Entrega imediata do boleto</li>
+	            				<li><i class="fa fa-caret-right"></i>2ª via sempre disponível 24h</li>
+	            				<li><i class="fa fa-caret-right"></i>Valor e vencimento sempre atualizados</li>
+	            			</ul>
+	            		</section>
+            		</div>
+            		<div class="col-md-8">
+            			<section class="box" data-sr="opacity 0, over 1.5s">
+	            			<div class="rounded">
+	            				<i class="fa fa-cloud"></i>
+	            			</div>
+	            			<h3>Inteligência</h3>
+	            			<h6>O poder do cloud</h6>
+	            			<p>Eficiente, além de mais simples, sempre disponível e atualizado, seu boleto eletrônico agora:</p>
+	            			<ul>
+	            				<li><i class="fa fa-caret-right"></i>Não precisa ser impresso</li>
+	            				<li><i class="fa fa-caret-right"></i>Aumenta os pagamentos em dia</li>
+	            				<li><i class="fa fa-caret-right"></i>Diminui o risco de inadimplência</li>
+	            				<li><i class="fa fa-caret-right"></i>Oferece comodidade para seus clientes</li>
+	            			</ul>
+	            		</section>
+            		</div>
+            		<div class="col-md-8">
+            			<section class="box" data-sr="opacity 0, over 2s">
+	            			<div class="rounded">
+	            				<i class="fa fa-smile-o"></i>
+	            			</div>
+	            			<h3>Personalização</h3>
+	            			<h6>Conquiste seu cliente</h6>
+	            			<p>Comunicação, saia do preto e branco e comunique-se, personalize seu boleto:</p>
+	            			<ul>
+	            				<li><i class="fa fa-caret-right"></i>Fidelize seus clientes</li>
+	            				<li><i class="fa fa-caret-right"></i>Torne seu boleto relevante</li>
+	            				<li><i class="fa fa-caret-right"></i>Utilize sua identidade visual</li>
+	            				<li><i class="fa fa-caret-right"></i>Direcione a mensagem certa para seu cliente</li>
+	            			</ul>
+	            		</section>
+            		</div>
+            	</div>
+            </div>
+        </section>
+        
+        <!-- PLANS -->
+        <section id="plans">       
+        	<div class="container">     
+        		<div class="row">
+            		<div class="col-md-24">
+            			<h2 class="title-section">Grátis ou Personalizado? É simples, basta escolher</h3>
+            			<h6 class="subtitle-section">Começar a emitir boletos ilimitados gratuitamente ou Personalize e tenha seu diferencial.</h6>
+            		</div>
+            	</div>               
+            	<div class="row margint60px" style="overflow: hidden">
+					<div class="col-md-8 col-md-offset-4">		
+						<section class="box" data-sr="enter left over 2s, move 800px">
+							<header>
+								<h3>Grátis</h3>
+								<h5>Comece com a agilidade e inteligência do boleto eletrônico no plano gratuito.</h5>
+								<figure>
+									<img src="img/icon-gift.png" class="img-relative center-block" alt="Grátis" width="128" height="128" />
+								</figure>	
+								<h1>R$ 0,00</h1>							
+							</header>
+							<aside>			
+								<ul>
+									<li><i class="fa fa-check"></i>Integração via API</li>
+									<li><i class="fa fa-check"></i>Sua Logo no Boleto</li>
+									<li><i class="fa fa-check"></i>Emissão de Boletos</li>
+									<li><i class="fa fa-check"></i>Envio de Boletos por email</li>
+									<li><i class="fa fa-check"></i>Link para download do Boleto</li>
+									<li><i class="fa fa-check"></i>Conciliação Bancária</li>
+									<li><i class="fa fa-check"></i>Relatório por status dos Boletos</li>
+									<li><i class="fa fa-check"></i>Contas Bancárias Ilimitadas</li>
+									<li><i class="fa fa-check"></i>Beneficiários Ilimitados</li>
+									<li><i class="fa fa-check"></i>Pagadores Ilimitados</li>
+								</ul>
+							</aside>
+						</section>				
+					</div>                       
+					<div class="col-md-8">
+						<section class="box" data-sr="enter right over 2s, move 800px">
+							<header>
+								<h3>Personalizado</h3>
+								<h5>Fortaleça ainda mais a relação com os seus clientes através da personalização do seu boleto.</h5>
+								<figure>
+									<img src="img/icon-custom.png" class="img-relative center-block" alt="Personalizado" width="128" height="128" />
+								</figure>
+								<h1>R$ 50,00</h1>
+							</header>
+							<aside>
+								<ul>
+									<li><i class="fa fa-check"></i>Integração via API</li>
+									<li><i class="fa fa-check"></i>Sua Logo no Boleto</li>
+									<li><i class="fa fa-check"></i>Emissão de Boletos</li>
+									<li><i class="fa fa-check"></i>Envio de Boletos por email</li>
+									<li><i class="fa fa-check"></i>Link para download do Boleto</li>
+									<li><i class="fa fa-check"></i>Conciliação Bancária</li>
+									<li><i class="fa fa-check"></i>Relatório por status dos Boletos</li>
+									<li><i class="fa fa-check"></i>Contas Bancárias Ilimitadas</li>
+									<li><i class="fa fa-check"></i>Beneficiários Ilimitados</li>
+									<li><i class="fa fa-check"></i>Pagadores Ilimitados</li>
+								</ul>
+							</aside>
+						</section>								
+					</div>
+              	</div>
+          	</div>
+        </section>
+        
+        <!-- FOOTER -->
+        <footer id="final">
+			<div class="container">
+				<div class="row hidden-xs">
+					<div class="col-md-24">
+						<ul>
+							<li>
+								<a href="#how-works">
+									<i class="fa fa-caret-up"></i>Como funciona
+									<div class="underline"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#benefits">
+									<i class="fa fa-caret-up"></i>Vantagens
+									<div class="underline"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#plans">
+									<i class="fa fa-caret-up"></i>Preços
+									<div class="underline"></div>
+								</a>
+							</li>
+							<li>
+								<a href="a.html" title="Acessar o Sistema">
+									<i class="fa fa-user"></i>Acesso
+									<div class="underline"></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row hidden-xs">
+					<div class="col-md-24">
+						<hr />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-16">
+						<figure>
+							<img src="img/logotipo-pagoo-white.png" width="120" height="38" alt="Pagoo - Seu novo Gateway de Pagamento." />
+						</figure>
+						<p>A sua Plataforma de Boletos Grátis. Crie, envie por email e disponibilize a 2ª via sempre atualizada.</p> 
+						<a class="bt-experimente" href="a.html" title="Acessar o Sistema">Experimente Agora <i class="fa fa-long-arrow-right"></i></a>
+					</div>
+					<div class="col-md-8">
+						<h3>
+							Contato
+						</h3>
+						<p><i class="fa fa-phone"></i>+55 (61) 3344-2547</p>
+						<p><i class="fa  fa-envelope"></i>contato@pagoo.com.br</p>
+						<p><i class="fa  fa-envelope"></i>suporte@pagoo.com.br</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- COPYRIGHT -->
+		<section id="copyright">
+			<div class="container">
+				<div class="row">
+		            <div class="col-md-20">
+		                <p>                	
+		                	INFOSOLO IT Organizational Solutions - Todos os direitos reservados
+		                </p>
+		            </div>
+		            <div class="col-md-4">
+		                <a href="#nav-main">Topo <i class="fa fa-arrow-up"></i></a>                        
+		            </div>
+		        </div>
+			</div>
+		</section>
+            		
+		<!-- OTHERS JS INSERTED BY DESIGNERS ºLº -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/responsiveslides.min.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="js/scrollReveal.min.js"></script>               
+        <script type="text/javascript" src="js/config.js"></script>
+        
     </body>
+
 </html>

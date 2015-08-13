@@ -17,5 +17,4 @@ var app = angular.module('pagoo', [
 	'idf.br-filters',
 	'ngSanitize'
 
-
 ]);

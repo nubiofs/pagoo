@@ -1,5 +1,5 @@
 var site_prefix = '/pagoo';
-var app = angular.module('pagoo',['ngRoute', 'ngResource']);
+var app = angular.module('pagoo',['ngRoute', 'ngResource', 'fox.scrollReveal']);
 
 app.config(['$resourceProvider', function ($resourceProvider) {
     // Don't strip trailing slashes from calculated URLs

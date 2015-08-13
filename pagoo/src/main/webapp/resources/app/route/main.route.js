@@ -21,7 +21,6 @@ app.config(['$stateProvider', '$urlRouterProvider','$httpProvider', '$locationPr
 			}			
 		})	
 	
-	
 		.state('home', { // PRIMEIRA VERSAO PAGINA INICIAL JA EH DE CRIAR EVENTO
 			url: '/home',
 			templateUrl: './novo.html', 
@@ -63,11 +62,8 @@ app.config(['$stateProvider', '$urlRouterProvider','$httpProvider', '$locationPr
 			}
 		})			
 		
-
-		
-		
 	$urlRouterProvider.otherwise(function($injector, $location,Authentication){
-		console.log(Authentication);
+		/*console.log(Authentication);*/
 		$location.path('/login');
     });
 		

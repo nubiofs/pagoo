@@ -4,6 +4,7 @@
     <head>
         
         <!-- METAS FAVICON -->        
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
@@ -19,8 +20,6 @@
         <title>Pagoo - Seu novo Gateway de Pagamento.</title>               
         
         <!-- ESTILOS -->
-<!--         <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'> -->
-        
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
@@ -34,7 +33,8 @@
     </head>
  
     <body ng-controller="ApplicationController" ng-init="init()" >
-        <span ui-view ></span>
+    
+        <div ui-view class="hw100"></div>                
         
         <!-- Angular -->
 		<script type="text/javascript" src="./resources/imports/jquery/dist/jquery.min.js"></script>
@@ -78,15 +78,17 @@
 		<script type="text/javascript" src="./resources/app/service/entidade.service.js"></script>
 		<script type="text/javascript" src="./resources/app/service/segmento.service.js"></script>
 		<script type="text/javascript" src="./resources/app/service/consulta.cobranca.service.js"></script>
-
 		
 		<!-- ROUTES -->
 		<script type="text/javascript" src="./resources/app/route/main.route.js"></script>
 		
-		<!-- OTHERS JS INSERTED BY DESIGNERS :) -->
+		<!-- OTHERS JS INSERTED BY DESIGNERS ºLº -->
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/responsiveslides.min.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="js/scrollReveal.min.js"></script>
+        <script type="text/javascript" src="js/fox-angular-scrollReveal.js"></script>             
+        
     </body>
-    
-    
 
 </html>
