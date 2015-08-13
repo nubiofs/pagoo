@@ -4,5 +4,8 @@
     <dependencies>
       <module name="org.slf4j" />
     </dependencies>
+    <exclude-subsystems>
+        <subsystem name="jsf" />
+    </exclude-subsystems>    
   </deployment>
 </jboss-deployment-structure>
